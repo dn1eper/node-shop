@@ -1,0 +1,13 @@
+{
+    "NODE_ENV": "development",
+    "SHOP_DB": "node-shop",
+    "SHOP_USER": "admin",
+    "SHOP_PASSWORD": "89eb28c597f8f8706015da0d5b5842e881dabfc429dfe89b",
+    "database": {
+        "host": "188.166.78.90",
+        "port": 3306
+    },
+    "server": {
+        "port": 8080
+    }
+}

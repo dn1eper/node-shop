@@ -31,7 +31,12 @@
 	"scripts": {
 		"server": "node ./bin/www",
 		"migrate": "node ./server/database/migrations/",
-		"seed": "node ./server/database/seed.js"
+		"seed": "node ./server/database/seed.js",
+		"react": "react-scripts start",
+		"start": "concurrently \"yarn server\" \"yarn react\"",
+		"build": "react-scripts build",
+		"eject": "react-scripts eject",
+		"mocha": "./node_modules/.bin/mocha --compilers js:babel-core/register"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.0.0-beta.40",

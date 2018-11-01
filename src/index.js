@@ -1,14 +1,30 @@
+import './styles/index.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
-import configureStore from './store/configureStore'; // adding a redux
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { PersistGate } from 'redux-persist/integration/react';
 
-const store = configureStore();	// redux-store
+import App from './components/App';
+import registerServiceWorker from './registerServiceWorker';
+import createStore from './store/createStore'; // adding a redux
+
+//import { fetchPosts } from './actions/postsActions';
+
+const { store, persistor } = createStore();	// redux-store
+
+//fetchPosts()(store.dispatch);
+
 
 ReactDOM.render(
-		<App store={store} />,
+	<Provider store={store}>
+		<PersistGate loading={null} persistor={persistor}>
+			<Router>
+				<Route path="/:place?/:subplace?" component={App} />
+			</Router>
+		</PersistGate>
+	</Provider>,
 	document.getElementById('root')
 );
 

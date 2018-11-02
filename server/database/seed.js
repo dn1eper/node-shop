@@ -1,31 +1,44 @@
 const utils = require('../utils');
-const seed = require('./seed.json');
+const data = require('./seed.json');
 const db = require("./index.js")
+const deasync = require('deasync');
 
 let inserts = [
 	['INSERT INTO admin (login, pass_hash) VALUES (?, ?)', 'admin', utils.hash('password')],
 	['INSERT INTO admin (login, pass_hash) VALUES (?, ?)', 'ian', utils.hash('admin')]
 ];
 
-seed.items.forEach(({id, title, htmlText, price, images, tags}) => {
-	inserts.push(['INSERT INTO item (item_id, title, htmlText, price) VALUES (?, ?, ?, ?)', id, title, htmlText, price]);
-	images.forEach((url) => 
-		inserts.push(['INSERT INTO item_image (url, item_id) VALUES (?, ?)', url, id])
-	);
-	tags.forEach((tag) => 
-		inserts.push(['INSERT INTO item_tag (name, item_id) VALUES (?, ?)', tag, id])
-	);
-});
-
-inserts.forEach(function(item, index) {
-	db.query(item[0], item.slice(1), function(err) {
-		if (err) {
-			db.end();
-			console.dir(item);
-			throw err;
-		}
-		console.log(index + 'rows inserted');
+function seed() {
+	data.items.forEach(({id, title, htmlText, price, images, tags}) => {
+		inserts.push(['INSERT INTO item (item_id, title, htmlText, price) VALUES (?, ?, ?, ?)', id, title, htmlText, price]);
+		images.forEach((url) => 
+			inserts.push(['INSERT INTO item_image (url, item_id) VALUES (?, ?)', url, id])
+		);
+		tags.forEach((tag) => 
+			inserts.push(['INSERT INTO item_tag (name, item_id) VALUES (?, ?)', tag, id])
+		);
 	});
-});
+	
+	var connected = false;
+	var attempts = 10;
+	inserts.forEach((item, index) => {
+		db.query(item[0], item.slice(1), (err) => {
+			if (err) throw new Error(err);
+			console.log(index + 'rows inserted');
+			connected = true;
+		});
+	});
 
-db.end();
+	while(connected === false && attempts--) {
+		deasync.sleep(100);
+	}
+
+	if (connected === false) throw new Error("Database not responding");
+}
+
+
+if (module.parent === null) {
+    seed();
+    db.end();
+    process.exit();
+}

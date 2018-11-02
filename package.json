@@ -27,8 +27,9 @@
 		"redux-thunk": "^2.2.0"
 	},
 	"scripts": {
+		"migrate": "node ./server/database/migrations/",
 		"seed": "node ./server/database/seed.js",
-		"server": "node ./server/index.js"
+		"server": "node ./server/"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.0.0-beta.40",

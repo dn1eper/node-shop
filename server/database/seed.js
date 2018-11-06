@@ -20,20 +20,23 @@ function seed() {
 	});
 	
 	var connected = false;
+	var ended = false;
 	var attempts = 10;
 	inserts.forEach((item, index) => {
 		db.query(item[0], item.slice(1), (err) => {
 			if (err) throw new Error(err);
-			console.log(index + 'rows inserted');
+			console.log((index+1) + ' row inserted');
 			connected = true;
+			if (index == inserts.length-1) ended = true;
 		});
 	});
 
-	while(connected === false && attempts--) {
+	while(!ended) {
+		if (!connected && 0 >-- attempts) {
+			throw new Error("Database not responding");
+		}
 		deasync.sleep(100);
 	}
-
-	if (connected === false) throw new Error("Database not responding");
 }
 
 

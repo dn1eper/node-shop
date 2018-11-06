@@ -1,10 +1,12 @@
 var express = require('express');
 var router = express.Router();
+var items = require('../items');
 
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-	
+// Just fetching all posts
+router.get('/', (req, res, next) => {
+	items.getAllItems((items) => {
+		res.json({items: items});
+	});
 });
 
 module.exports = router;

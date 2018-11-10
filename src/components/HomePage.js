@@ -1,7 +1,12 @@
 import React from 'react';
+import PostFilter from 'containers/PostFilter';
+import FilteredPostList from 'containers/FilteredPostList';
 
-const HomePage = () => (
-	<div>Nothing!</div>
-);
+const HomePage = ({ match: { params } }) => (
+	<div>
+	<PostFilter filter={params.param} />
+	<FilteredPostList filter={params.param} />
+	</div>
+)
 
 export default HomePage;

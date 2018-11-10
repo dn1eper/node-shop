@@ -1,0 +1,50 @@
+.post {
+	display: inline-block;
+	max-width: 30%;
+	box-shadow: 0 0 10px 1px #ccc;
+	padding: 10px;
+}
+
+.post:hover {
+	box-shadow: 0 0 8px 1px #2DA292;
+	cursor: pointer;
+}
+
+.post img {
+	width: 100%;
+}
+
+.post__text {
+	font-family: sans;
+	font-size: 15px;
+}
+
+.post__tags {
+	font-size: 12px;
+}
+
+.post__likes {
+	float: right;
+	font-size: 12px;
+}
+
+.post__tag {
+	text-decoration: none;
+	color: #bbb;
+	dispay: inline-block;
+	margin-right: 5px;
+	margin-top: 5px;
+}
+
+.post__tag:hover {
+	color: #444;
+	cursor: pointer;
+}
+
+.post__tag:before {
+	content: '#';
+}
+
+.post__likes {
+	align: right;
+}

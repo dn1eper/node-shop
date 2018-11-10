@@ -1,0 +1,10 @@
+.post-list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-bottom: 15px;
+
+	width: 60%;
+	margin: 0 auto;
+}

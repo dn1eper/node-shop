@@ -1,0 +1,7 @@
+.image-list {
+	display: flex;
+}
+
+.image-list img {
+	height: 480px;
+}

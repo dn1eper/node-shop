@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
-import 'client/styles/Page.css';
+import 'styles/Page.css';
 import { ADMIN, CONTACT_US, LOGIN_URL,
 		 REGISTER_URL, LOGOUT_URL, CART_URL,
-		 HOME, ABOUT, SEARCH } from '../Constants';
+		 HOME, ABOUT, SEARCH } from 'Constants';
 import HomePage from 'components/HomePage';
 import AboutPage from 'components/AboutPage';
 import MainMenu from 'containers/MainMenu';

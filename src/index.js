@@ -10,11 +10,11 @@ import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 import createStore from './store/createStore'; // adding a redux
 
-//import { fetchPosts } from './actions/postsActions';
+import { fetchPosts } from './actions/postsActions';
 
 const { store, persistor } = createStore();	// redux-store
 
-//fetchPosts()(store.dispatch);
+fetchPosts()(store.dispatch);
 
 
 ReactDOM.render(

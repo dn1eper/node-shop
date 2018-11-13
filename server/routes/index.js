@@ -41,4 +41,16 @@ router.post('/register', (req, res, next) =>
 	)
 );
 
+
+// User send his cart to confirm order
+router.post('/order', (req, res, next) => {
+	if (auth.checkToken(req.body.token)) {
+		let user_id = auth.getUserId(req.body.token);
+		cart.createNewOrder(req.body.items, user_id, result => 
+			res.json(result)
+		);
+	}
+	else res.json({status: 'Token not valid'});
+});
+
 module.exports = router;

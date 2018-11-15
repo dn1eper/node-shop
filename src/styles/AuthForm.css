@@ -1,0 +1,60 @@
+form.auth {
+  width: 480px;
+  margin: auto;
+  padding: 16px;
+  text-align: center;
+}
+
+form.auth legend {
+  font-weight: bold;
+}
+
+form.auth input {
+  padding: 6px;
+}
+
+/* button */
+form.auth .btn {
+  padding: 4px;
+  margin: 6px;
+  margin-top: 0px;
+  width: 90px;
+  height: 30px;
+  background-color: white;
+  border: 1px solid #2DA292;
+  border-radius: 4px;
+  cursor: pointer;
+  
+}
+
+form.auth input.btn:hover {
+  background-color: #2DA292;
+  color: white;
+}
+
+form.auth .wait_btn {
+  padding: 0px;
+  cursor: auto;
+  background-size: contain;
+}
+
+form.auth img {
+  width: 20px;
+  height: 20px;
+  margin-bottom: -10px;
+  top: -4px;
+  position: relative;
+}
+
+/* info msg */
+form.auth .error {
+  color: #D8000C;
+  background-color: #FFBABA;
+  border: 1px solid;
+  margin: 10px;
+  padding: 15px;
+}
+
+form.auth div.success {
+  padding: 100px;
+}

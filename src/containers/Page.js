@@ -8,14 +8,10 @@ import { ADMIN, CONTACT_US, LOGIN_URL,
 import HomePage from 'components/HomePage';
 import AboutPage from 'components/AboutPage';
 import MainMenu from 'containers/MainMenu';
-/* TODO: Login pages
 import LoginPage from 'components/LoginPage';
 import Logout from 'containers/Logout';
 import RegisterPage from 'components/RegisterPage';
-*/
-/* TODO: cart page
 import CartPage from 'containers/CartPage';
-*/
 /* TODO: admin pages
 import AdminPage from 'components/AdminPage';
 import AdminMenu from 'components/AdminMenu';
@@ -43,15 +39,16 @@ let Page = ({ param, sub }) => {
 			<Route exact path={`/${ABOUT}`} component={AboutPage} />
 			<Route exact path={`/${SEARCH}`} component={HomePage} />
 			<Route exact path={`/${CONTACT_US}`} component={AboutPage} />
+			<Route exact path={`/${LOGIN_URL}`} component={LoginPage} />
+			<Route exact path={`/${REGISTER_URL}`} component={RegisterPage} />
+			<Route exact path={`/${LOGOUT_URL}`} component={Logout} />
+			<Route exact path={`/${CART_URL}`} component={CartPage} />
 		  </div>
 		</div>
 	);
 };
+
 /*
-<Route exact path={`/${LOGIN_URL}`} component={LoginPage} />
-<Route exact path={`/${REGISTER_URL}`} component={RegisterPage} />
-<Route exact path={`/${LOGOUT_URL}`} component={Logout} />
-<Route exact path={`/${CART_URL}`} component={CartPage} />
 <Route path={`/${ADMIN}`} component={AdminPage} />
 */
 Page = connect()(Page);

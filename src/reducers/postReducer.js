@@ -21,9 +21,9 @@ export default function posts(state={}, action) {
 			});
 			return Object.assign({}, state, {data: data});
 		case FETCH_POSTS_END:
-			console.log(action.items); // Log fetched posts
+			//console.log(action.posts); // Log fetched posts
 			return Object.assign({}, {
-				data: action.items,
+				data: action.posts,
 				isFetching: false
 			});
 		case FETCH_POSTS_START:

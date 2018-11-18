@@ -22,9 +22,10 @@ export function fetchPosts() {
 	return dispatch => {
 		dispatch(requestPosts());
 		return fetch(`http://${URL}:8080/`)
-			.then(response => response.json(),
-				  error => dispatch(fetchError('posts')))
-			.then(json => dispatch(recievePosts(json)));
+			.then(res => 
+				res.json()
+				.then(json => dispatch(recievePosts({posts: json.items }))),
+			err => dispatch(fetchError('posts')))
 	};
 }
 

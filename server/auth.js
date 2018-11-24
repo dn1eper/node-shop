@@ -12,7 +12,7 @@ const tryToAuthenticate = (login, pass_hash) => {
 			if (err) { return reject(err); }
 			if (rows.length == 0) { return resolve(false); }
 			if (rows[0].pass_hash != pass_hash) { return resolve(false); }
-			return resolve(rows[0].amin_id);
+			return resolve(rows[0].admin_id);
 		});
 	});
 };

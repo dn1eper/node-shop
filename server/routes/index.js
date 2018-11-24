@@ -3,6 +3,7 @@ var router = express.Router();
 
 var items = require('../items');
 var auth = require('../auth');
+var cart = require('../cart')
 
 // Just fetching all posts
 router.get('/', (req, res, next) => {

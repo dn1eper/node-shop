@@ -7,6 +7,8 @@ import { loginRequest, loginError } from 'actions/loginActions';
 import LoadingImage from 'img/Loading.gif';
 import 'styles/AuthForm.css';
 
+
+// TODO: Add I18n
 class LoginPage extends Component {
     handleSubmit() {
         var data = {
@@ -60,7 +62,7 @@ class LoginPage extends Component {
                         />
                     </p>
                     <p>
-                        <input 
+                        <input
                             type="password"
                             id="password"
                             placeholder="Password"
@@ -68,8 +70,8 @@ class LoginPage extends Component {
                             autoComplete="current-password"
                         />
                     </p>
-                
-                    <input 
+
+                    <input
                         type="button"
                         value="Log in"
                         onClick={this.handleSubmit.bind(this)}

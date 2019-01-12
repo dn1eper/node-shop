@@ -5,6 +5,7 @@ import { cartSubmit, cartSubmitError, cartClear, cartAddItem, cartRemoveItem } f
 import LoadingImage from 'img/Loading.gif';
 import 'styles/Cart.css';
 
+// TODO: Add I18n
 class CartPage extends Component {
 	handleSubmit() {
 		const { items, token, onError, onSubmit } = this.props;
@@ -15,7 +16,7 @@ class CartPage extends Component {
 
 	render() {
 		const { items, isError, inProcess,
-			errorMsg, isOrderCreated, order_id, 
+			errorMsg, isOrderCreated, order_id,
 			onRemoveItem, onAddItem, onCartClear } = this.props;
 
 		return (
@@ -29,16 +30,16 @@ class CartPage extends Component {
 						onClick={() => onCartClear()}
 						className="btn"
 						id="newOrderBtn"
-					/>    
+					/>
 				</div>
-					
+
 				<div className="cart_preorder" hidden={isOrderCreated}>
 					<div className="cart_list">
 						{
 							items.length ? items.map(({id, count, imageList, title}) => (
 								<div key={id} className="cart_item">
 									<img src={imageList[0].url} alt={title} />
-									<h3 className="cart_item_title">{title}</h3>									
+									<h3 className="cart_item_title">{title}</h3>
 									<div className="cart_item_count" item_id={id}>
 									<input
 										type="button"
@@ -73,7 +74,7 @@ class CartPage extends Component {
 						className="btn"
 						id="submitBtn"
 						hidden={inProcess}
-					/>                    
+					/>
 					<button
 						className="btn wait_btn"
 						hidden={!inProcess}

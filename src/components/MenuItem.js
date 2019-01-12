@@ -4,6 +4,7 @@ import 'styles/MenuItem.css';
 import { HOME, ABOUT, ALL_POSTS,
 		 ORDERS, MESSAGES, CONTACT_US, LOGIN_URL, LOGOUT_URL, CART_URL } from 'Constants';
 
+//TODO: Add I18n
 function translateItem(item, param) {
 	switch (item) {
 	case HOME: return 'Home';

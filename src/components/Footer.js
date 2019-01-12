@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { HOME, ABOUT, CONTACT_US }  from '../Constants';
 import 'styles/Footer.css';
 // No props yet
+
+//TODO: Add I18n
 let Footer = ({ dispatch }) => (
 	<footer>
 

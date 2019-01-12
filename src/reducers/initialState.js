@@ -26,6 +26,7 @@ export default {
         length: 0,
         order_id: false
     },
+  locale: 'ru',
 };
 
 /*

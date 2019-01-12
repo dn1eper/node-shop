@@ -16,24 +16,24 @@ const Menu = (props) => {
         <div className="menu">
 
         <NavLink to={`/${HOME}`} >
-            <MenuItem item={HOME} />
+            <MenuItem item={HOME} locale={props.locale}/>
         </NavLink>
 
         <NavLink to={`/${ABOUT}`} >
-            <MenuItem item={ABOUT} />
+            <MenuItem item={ABOUT} locale={props.locale}/>
         </NavLink>
 
 
         <NavLink to={`/${CONTACT_US}`} >
-            <MenuItem item={CONTACT_US} />
+            <MenuItem item={CONTACT_US} locale={props.locale}/>
         </NavLink>
 
         <NavLink to={`/${CART_URL}`} >
-            <MenuItem item={CART_URL} param={props.cart_length}/>
+            <MenuItem item={CART_URL} locale={props.locale} param={props.cart_length}/>
         </NavLink>
 
         <NavLink to={`/${lastMenuItem}`} >
-            <MenuItem item={lastMenuItem} />
+            <MenuItem item={lastMenuItem} locale={props.locale}/>
         </NavLink>
 
         </div>

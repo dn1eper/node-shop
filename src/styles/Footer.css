@@ -42,3 +42,17 @@ footer {
 .footer__information {
 	align-self: flex-end;
 }
+
+.footer__locale {
+	margin-left: 10px;
+}
+
+.footer__locale__active {
+	text-decoration: underline; 
+}
+
+.footer__locale:hover {
+	margin-left: 8px;
+	font-weight: bold;
+	cursor: pointer;
+}

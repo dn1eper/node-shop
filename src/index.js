@@ -16,7 +16,6 @@ const { store, persistor } = createStore();	// redux-store
 
 fetchPosts()(store.dispatch);
 
-
 ReactDOM.render(
 	<Provider store={store}>
 		<PersistGate loading={null} persistor={persistor}>

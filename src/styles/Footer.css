@@ -4,7 +4,7 @@ footer {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	background-color: #2DA292;
+	background-color: #6A5ACD;
 	color: white;
 	padding: 10px;
 }
@@ -41,4 +41,18 @@ footer {
 
 .footer__information {
 	align-self: flex-end;
+}
+
+.footer__locale {
+	margin-left: 10px;
+}
+
+.footer__locale__active {
+	text-decoration: underline; 
+}
+
+.footer__locale:hover {
+	margin-left: 8px;
+	font-weight: bold;
+	cursor: pointer;
 }

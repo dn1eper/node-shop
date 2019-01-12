@@ -5,8 +5,11 @@ import { NavLink, Redirect } from 'react-router-dom';
 import { REDIRECT_AFTER_LOGIN, REGISTER_URL } from 'Constants';
 import { loginRequest, loginError } from 'actions/loginActions';
 import LoadingImage from 'img/Loading.gif';
+import I18n from 'i18n';
 import 'styles/AuthForm.css';
 
+
+// TODO: Add I18n
 class LoginPage extends Component {
     handleSubmit() {
         var data = {
@@ -38,7 +41,7 @@ class LoginPage extends Component {
     }
 
     render() {
-        const { isSigned, isError, inProcess, errorMsg } = this.props;
+        const { isSigned, isError, inProcess, errorMsg, locale } = this.props;
 
         if (isSigned) return (
             <Redirect to={{ pathname: `/${REDIRECT_AFTER_LOGIN}` }}/>
@@ -46,7 +49,7 @@ class LoginPage extends Component {
         else return (
             <form className="auth" onKeyDown={this.handleEnterBtnClick.bind(this)}>
                 <fieldset>
-                    <legend>Log in to shop</legend>
+                    <legend>{I18n[locale].login.prompt}</legend>
                     <div className="error" hidden={!isError}>
                         {errorMsg}
                     </div>
@@ -54,24 +57,24 @@ class LoginPage extends Component {
                         <input
                             type="text"
                             id="email"
-                            placeholder="Email"
+                            placeholder={I18n[locale].login.email}
                             className="email"
                             autoComplete="email"
                         />
                     </p>
                     <p>
-                        <input 
+                        <input
                             type="password"
                             id="password"
-                            placeholder="Password"
+                            placeholder={I18n[locale].login.password}
                             className="password"
                             autoComplete="current-password"
                         />
                     </p>
-                
-                    <input 
+
+                    <input
                         type="button"
-                        value="Log in"
+                        value={I18n[locale].login.login}
                         onClick={this.handleSubmit.bind(this)}
                         className="btn"
                         id="loginBtn"
@@ -81,11 +84,11 @@ class LoginPage extends Component {
                         className="btn wait_btn"
                         hidden={!inProcess}
                         disabled
-                    ><img src={LoadingImage} alt="logining..."/></button>
+                    ><img src={LoadingImage} alt={I18n[locale].login.logining}/></button>
                     <NavLink to={`/${REGISTER_URL}`} >
                         <input
                             type="button"
-                            value="Register"
+                            value={I18n[locale].login.register}
                             className="btn"
                             id="signupBtn"
                         />
@@ -101,7 +104,8 @@ export default connect(
         inProcess: state.auth.status === 'request',
         isSigned: state.auth.status === 'signed',
         isError: state.auth.status === 'error',
-        errorMsg: state.auth.error.message
+        errorMsg: state.auth.error.message,
+			  locale: state.locale,
     }),
     dispatch => ({
         onLogin: bindActionCreators(loginRequest, dispatch),

@@ -19,15 +19,6 @@ const Menu = (props) => {
             <MenuItem item={HOME} locale={props.locale}/>
         </NavLink>
 
-        <NavLink to={`/${ABOUT}`} >
-            <MenuItem item={ABOUT} locale={props.locale}/>
-        </NavLink>
-
-
-        <NavLink to={`/${CONTACT_US}`} >
-            <MenuItem item={CONTACT_US} locale={props.locale}/>
-        </NavLink>
-
         <NavLink to={`/${CART_URL}`} >
             <MenuItem item={CART_URL} locale={props.locale} param={props.cart_length}/>
         </NavLink>
@@ -39,5 +30,16 @@ const Menu = (props) => {
         </div>
     );
 };
+/*
+        <NavLink to={`/${ABOUT}`} >
+            <MenuItem item={ABOUT} locale={props.locale}/>
+        </NavLink>
+
+
+        <NavLink to={`/${CONTACT_US}`} >
+            <MenuItem item={CONTACT_US} locale={props.locale}/>
+        </NavLink>
+
+*/
 
 export default Menu;

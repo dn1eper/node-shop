@@ -1,7 +1,7 @@
 export default {
     en: {
         menu: {
-            home: 'Home',
+            home: 'Shop',
             about: 'About',
             all_posts: 'All posts',
             orders: 'Orders',
@@ -13,7 +13,7 @@ export default {
         },
         footer: {
             site_map: 'Shop map',
-            home: 'Home',
+            home: 'Main page',
             about: 'About',
             write_to_us: 'Write to us',
             copyright: 'Shop (C) 2019',
@@ -40,7 +40,7 @@ export default {
     },
     ru: {
         menu: {
-            home: 'Домашняя',
+					home: 'Магазин',
             about: 'О нас',
             all_posts: 'Все посты',
             orders: 'Заказы',
@@ -52,7 +52,7 @@ export default {
         },
         footer: {
             site_map: 'Карта сайта',
-            home: 'Домашняя',
+            home: 'На главную',
             about: 'О нас',
             write_to_us: 'Напишите нам',
             copyright: 'Shop (C) 2019',

@@ -22,8 +22,8 @@ class CartPage extends Component {
 		return (
 			<div className="cart_wrapper">
 				<div className="cart_ordered" hidden={!isOrderCreated}>
-					<h1>Your order is decorated!</h1>
-					<p>Your order number: {order_id}</p>
+					<h1>{I18n[locale].cart.order_is_decorated}</h1>
+					<p>{I18n[locale].cart.order_number} {order_id}</p>
 					<input
 						type="button"
 						value={I18n[locale].cart.start_order}
